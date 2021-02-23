@@ -21,6 +21,5 @@ namespace ProjComMedMVC.Domain.Entities
         List<Produto> produtos { get; set; }
 
         #endregion
-
     }
 }
