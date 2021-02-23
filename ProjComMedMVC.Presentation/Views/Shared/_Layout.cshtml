@@ -1,0 +1,122 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>SCC - Medvitalis</title>
+
+    <!-- Folha de estilos do bootstrap -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- menu do sistema -->
+    <nav class="navbar navbar-expand-lg navbar-expand bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                                   (Gerenciamento de Compras)</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                           href="/Home/Index">Página Inicial</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Empresas
+                        </a>
+                        <ul class="dropdown-menu" aria-
+                            labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Empresa/Cadastro">Cadastrar Empresas</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Empresa/Consulta">Consultar Empresas</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Relatório de Empresas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Empresas
+                        </a>
+                        <ul class="dropdown-menu" aria-
+                            labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Comprador/Cadastro">Cadastrar Compradores</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Comprador/Consulta">Consultar Compradores</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Relatório de Compradores
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Produtos
+                        </a>
+                        <ul class="dropdown-menu" aria-
+                            labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Produto/Cadastro">Cadastrar Produtos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Produto/Consulta">Consultar Produtos</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Relatório de Produtos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Empresa S/A" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- conteudo das demais páginas-->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+    <!-- arquivo de codigo javascript-->
+    <script src="~/js/bootstrap.js"></script>
+</body>
+</html>
