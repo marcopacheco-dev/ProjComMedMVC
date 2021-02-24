@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <ProjectReference Include="..\ProjComMedMVC.Domain\ProjComMedMVC.Domain.csproj" />
+    <ProjectReference Include="..\ProjComMedMVC.Repository\ProjComMedMVC.Repository.csproj" />
   </ItemGroup>
 
 </Project>

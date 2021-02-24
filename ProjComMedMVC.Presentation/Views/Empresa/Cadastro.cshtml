@@ -1,0 +1,45 @@
+﻿@model ProjComMedMVC.Presentation.Models.EmpresaCadastroViewModel
+
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5>Formulário de cadastro de empresa</h5>
+<p>Preencha os campos abaixo para cadastrar uma empresa.</p>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            <label>Razão Social da Empresa: </label>
+            @Html.TextBoxFor(model => model.RazaoSocial,
+            new
+            {
+                @placeholder = "Ex: Empresa Modelo S/A",
+                @class = "form-control"
+            })
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.RazaoSocial)
+            </div>
+            <br />
+
+            <label>CNPJ da Empresa: </label>
+            @Html.TextBoxFor(model => model.Cnpj,
+            new
+            {
+                @placeholder = "Ex: 00000000000000",
+                @class = "form-control"
+            })
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Cnpj)
+            </div>
+            <br />
+
+            <input type="submit" value="Cadastrar Empresa"
+                   class="btn btn-success" />
+        }
+    </div>
+</div>

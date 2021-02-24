@@ -13,6 +13,11 @@ namespace ProjComMedMVC.Repository.Repositories
     {
         private string connectionstring;
 
+        public CompradorRepository(string connectionstring)
+        {
+            this.connectionstring = connectionstring;
+        }
+
         public void Inserir(Comprador obj)
         {
             var query = @"INSERT INTO COMPRADOR (IDCOMPRADOR, NOME, CPF, CONTATO, EMAIL)
