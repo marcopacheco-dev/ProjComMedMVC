@@ -9,6 +9,6 @@ namespace ProjComMedMVC.Repository.Interfaces
         : IBaseRepository<Empresa>
     {
         Empresa ObterPorCnpj(string Cnpj);
-
+        List<Empresa> ObterPorRazaoSocial(string razaoSocial);
     }
 }

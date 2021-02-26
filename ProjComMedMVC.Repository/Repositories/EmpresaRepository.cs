@@ -13,6 +13,11 @@ namespace ProjComMedMVC.Repository.Repositories
     {
         private string connectionstring;
 
+        public EmpresaRepository(string connectionstring)
+        {
+            this.connectionstring = connectionstring;
+        }
+
         public void Inserir(Empresa obj)
         {
             var query = @"INSERT INTO EMPRESA(IDEMPRESA, RAZAOSOCIAL, CNPJ)
@@ -71,6 +76,14 @@ namespace ProjComMedMVC.Repository.Repositories
             using (var connection = new SqlConnection(connectionstring))
             {
                 return connection.Query<Empresa>(query, new { Cnpj }).FirstOrDefault();
+            }
+        }
+        public List<Empresa> ObterPorRazaoSocial(string razaoSocial)
+        {
+            var query = @"SELECT * FROM EMPRESA WHERE RAZAOSOCIAL = @RAZAOSOCIAL";
+            using (var connection = new SqlConnection(connectionstring))
+            {
+                return connection.Query<Empresa>(query, new { razaoSocial }).ToList();
             }
         }
     }
