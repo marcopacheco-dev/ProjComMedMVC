@@ -1,2 +1,0 @@
-# ProjComMedMVC
-Gerenciamento de Compras
