@@ -1,0 +1,159 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SGC - Medvitalis</title>
+
+    <!-- Folha de estilos do bootstrap -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Folha de estilos do Jquery datatables -->
+    <link href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+    <!-- menu do sistema -->
+    <nav class="navbar navbar-expand-lg navbar-expand bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                (Gerenciamento de Compras)
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                           href="/Home/Index">Página Inicial</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Empresas
+                        </a>
+                        <ul class="dropdown-menu" aria-
+                            labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Empresa/Cadastro">Cadastrar Empresas</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Empresa/Consulta">Consultar Empresas</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Relatório de Empresas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Empresas
+                        </a>
+                        <ul class="dropdown-menu" aria-
+                            labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Comprador/Cadastro">Cadastrar Compradores</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Comprador/Consulta">Consultar Compradores</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Relatório de Compradores
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                           href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Produtos
+                        </a>
+                        <ul class="dropdown-menu" aria-
+                            labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Produto/Cadastro">Cadastrar Produtos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/Produto/Consulta">Consultar Produtos</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    Relatório de Produtos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Empresa S/A" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    @if (TempData["MensagemSucesso"] != null)
+     {
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@TempData["MensagemSucesso"]</strong>
+    </div>
+     }
+    else if(TempData["MensagemErro"] != null)
+    {
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>@TempData["MensagemErro"]</strong>
+    </div>
+    }
+    <!-- conteudo das demais páginas-->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+    <!-- arquivo de codigo javascript-->
+    <script src="~/js/bootstrap.js"></script>
+
+    <!-- biblioteca do jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- biblioteca do jquery datatable -->
+    <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+
+    <!-- aplicando o datatable -->
+
+    <script>
+        $(document).ready(function () {
+            $('#tabela').DataTable({
+                language: {
+                    url: 'http://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
